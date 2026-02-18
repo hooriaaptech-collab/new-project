@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blue-chic Store</title>
+    <style>
+        /* CSS Variables for Consistency */
+        :root {
+            --primary-blue: #002366; /* Mugha Blue */
+            --accent-blue: #0056b3;
+            --pure-white: #ffffff;
+            --off-white: #f8f9fa;
+            --text-gray: #555;
+            --shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--off-white);
+            line-height: 1.6;
+        }
+
+        /* --- Header & Nav --- */
+        header {
+            background: var(--pure-white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(0,35,102,0.8), rgba(0,35,102,0.8)), 
+                        url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--pure-white);
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .btn-main {
+            background: var(--pure-white);
+            color: var(--primary-blue);
+            padding: 12px 35px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: 0.3s ease;
+            border: 2px solid var(--pure-white);
+        }
+
+        .btn-main:hover {
+            background: transparent;
+            color: var(--pure-white);
+        }
+
+        /* --- Product Grid --- */
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary-blue);
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
+
+        .grid {
+            display: grid;
+            /* Yahan responsive magic ho raha hai: minmax use kiya hai */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--pure-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-blue);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 250px;
+            background: #eee;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-body h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+
+        .price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-gray);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .btn-buy {
+            display: inline-block;
+            width: 100%;
+            padding: 10px;
+            background: var(--primary-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 15px;
+            }
+            nav ul {
+                margin-top: 15px;
+            }
+            nav ul li {
+                margin: 0 10px;
+            }
+            .hero {
+                height: 50vh;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-blue);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Mugha Store</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="#">contect</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Exclusive Blue Edition</h1>
+        <p>Aapke style ke liye behtareen blue aur white ka combination. Abhi browse karein hamari latest collection.</p>
+        <a href="#shop" class="btn-main">Shop Now</a>
+    </section>
+
+    <div class="container" id="shop">
+        <h2 class="section-title">New Arrivals</h2>
+        <div class="grid">
+            
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=80" alt="Product" class="card-img">
+                <div class="card-body">
+                    <h3>Premium White Tee</h3>
+                    <span class="price">Rs. 1,500</span>
+                    <a href="#" class="btn-buy">Add to Cart</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=500&q=80" alt="Product" class="card-img">
+                <div class="card-body">
+                    <h3>Mugha Blue Jacket</h3>
+                    <span class="price">Rs. 4,200</span>
+                    <a href="#" class="btn-buy">Add to Cart</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80" alt="Product" class="card-img">
+                <div class="card-body">
+                    <h3>Designer Watch</h3>
+                    <span class="price">Rs. 8,900</span>
+                    <a href="#" class="btn-buy">Add to Cart</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Mugha Store | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
